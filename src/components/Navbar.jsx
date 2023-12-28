@@ -9,8 +9,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const currentUser = { displayName: "furkan doğu" };
-  // const currentUser = false
+  // const currentUser = { displayName: "furkan doğu" };
+  const currentUser = false
 
   return (
     <>
