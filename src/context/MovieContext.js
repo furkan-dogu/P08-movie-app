@@ -8,17 +8,18 @@ export const useMovieContext = () => {
 };
 
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
-const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
+const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 
 const MovieContextProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getMovies();
+    getMovies(FEATURED_API);
   }, []);
 
-  const getMovies = () => {
+  const getMovies = (url) => {
+    //? search değişikliklerine algılaması için url parametresi verdim
     setLoading(true);
     axios
       .get(url)
@@ -27,7 +28,7 @@ const MovieContextProvider = ({ children }) => {
       .finally(() => setLoading(false));
   };
 
-  const values = { movies, loading };
+  const values = { movies, loading, getMovies };
 
   return (
     <MovieContext.Provider value={values}>{children}</MovieContext.Provider>

@@ -48,7 +48,7 @@ const MovieDetail = () => {
         {title}
       </h1>
       {videoKey && <VideoSection videoKey={videoKey} />}
-      <div className="md:container flex justify-center px-10">
+      <div className="md:container flex justify-center px-10 mt-3">
         <div className="flex flex-col lg:flex-row max-w-6xl rounded-lg bg-gray-100 dark:bg-gray-dark-second shadow-lg">
           <img
             className=" lg:w-1/3 h-96 lg:h-[600px] object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
