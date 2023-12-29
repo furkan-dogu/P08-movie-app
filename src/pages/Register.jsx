@@ -3,8 +3,7 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useAuthContext } from "../context/AuthContext";
 
 const Register = () => {
-
-  const {createUser} = useAuthContext()
+  const { createUser } = useAuthContext();
 
   const [info, setInfo] = useState({
     firstName: "",
@@ -13,15 +12,14 @@ const Register = () => {
     password: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setInfo({ ...info, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const {email,password} = info
-    createUser(email,password)
-  }
+    e.preventDefault();
+    const { email, password } = info;
+    createUser(email, password);
+  };
 
   return (
     <div className="flex justify-center">
@@ -38,7 +36,7 @@ const Register = () => {
                 type="text"
                 required
                 placeholder=" "
-                onClick={handleChange}
+                onChange={handleChange}
               />
               <label htmlFor="floating_text">First Name</label>
             </div>
@@ -49,7 +47,7 @@ const Register = () => {
                 type="text"
                 required
                 placeholder=" "
-                onClick={handleChange}
+                onChange={handleChange}
               />
               <label htmlFor="floating_text">Last Name</label>
             </div>
@@ -60,7 +58,7 @@ const Register = () => {
                 type="email"
                 placeholder=" "
                 required
-                onClick={handleChange}
+                onChange={handleChange}
               />
               <label htmlFor="floating_email">Email</label>
             </div>
@@ -71,7 +69,7 @@ const Register = () => {
                 type="password"
                 placeholder=" "
                 required
-                onClick={handleChange}
+                onChange={handleChange}
               />
               <label htmlFor="floating_password">Password</label>
             </div>

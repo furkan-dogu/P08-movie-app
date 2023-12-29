@@ -4,9 +4,11 @@ import { useAuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { signIn } = useAuthContext();
+  const { singIn } = useAuthContext();
 
   const [info, setInfo] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   });
@@ -18,13 +20,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = info;
-    signIn(email, password);
+    singIn(email, password);
   };
 
   return (
     <div className="flex justify-center">
       <div className="overflow-hidden flex-1 h-screen justify-center items-center dark:bg-gray-dark-main">
-        <div className={`form-container mt-[5vh] w-[380px] h-[580px] `}>
+        <div className={`form-container mt-[5vh] w-[380px] h-[580px]`}>
           <form onSubmit={handleSubmit}>
             <h2 className="text-red-main text-2xl font-[500] text-center tracking-[0.1em] mb-3">
               Sign In
@@ -36,7 +38,7 @@ const Login = () => {
                 type="email"
                 placeholder=" "
                 required
-                onClick={handleChange}
+                onChange={handleChange}
               />
               <label htmlFor="floating_email">Email</label>
             </div>
@@ -47,7 +49,7 @@ const Login = () => {
                 type="password"
                 placeholder=" "
                 required
-                onClick={handleChange}
+                onChange={handleChange}
               />
               <label htmlFor="floating_password">Password</label>
             </div>
