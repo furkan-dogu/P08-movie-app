@@ -3,7 +3,7 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useAuthContext } from "../context/AuthContext";
 
 const Register = () => {
-  const { createUser } = useAuthContext();
+  const { createUser, signUpProvider } = useAuthContext();
 
   const [info, setInfo] = useState({
     firstName: "",
@@ -61,7 +61,7 @@ const Register = () => {
                 required
                 onChange={handleChange}
               />
-              <label htmlFor="floating_email">Email</label>
+              <label htmlFor="floating_email">E-mail</label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
@@ -80,6 +80,7 @@ const Register = () => {
             <button
               className="flex justify-between text-center items-center btn-danger"
               type="button"
+              onClick={signUpProvider}
             >
               Continue with Google
               <GoogleIcon color="currentColor" />

@@ -4,6 +4,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -76,7 +77,6 @@ const AuthContextProvider = ({ children }) => {
     //? Pop up işlemi
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
         navigate("/");
         toastSuccessNotify("Logged in successfully");
       })
@@ -85,7 +85,25 @@ const AuthContextProvider = ({ children }) => {
       });
   };
 
-  const values = { createUser, singIn, logOut, currentUser, signUpProvider };
+  //! FORGOT PASSWORD
+  const forgotPassword = (email) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toastSuccessNotify("Please check your e-mail");
+      })
+      .catch((error) => {
+        toastErrorNotify(error.message);
+      });
+  };
+
+  const values = {
+    createUser,
+    singIn,
+    logOut,
+    currentUser,
+    signUpProvider,
+    forgotPassword,
+  };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

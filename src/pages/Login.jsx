@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { singIn, signUpProvider } = useAuthContext();
+  const { singIn, signUpProvider, forgotPassword } = useAuthContext();
 
   const [info, setInfo] = useState({
     firstName: "",
@@ -40,7 +40,7 @@ const Login = () => {
                 required
                 onChange={handleChange}
               />
-              <label htmlFor="floating_email">Email</label>
+              <label htmlFor="floating_email">E-mail</label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
@@ -54,7 +54,10 @@ const Login = () => {
               <label htmlFor="floating_password">Password</label>
             </div>
             <div className="flex justify-between">
-              <span className="py-3 font-[0.75em] cursor-pointer decoration-none text-gray-500 hover:text-[#ff4b45]">
+              <span
+                className="py-3 font-[0.75em] cursor-pointer decoration-none text-gray-500 hover:text-[#ff4b45]"
+                onClick={() => forgotPassword(info.email)}
+              >
                 Forgot Password
               </span>
               <Link
