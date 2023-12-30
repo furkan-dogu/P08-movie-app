@@ -38,6 +38,7 @@ const Login = () => {
                 type="email"
                 placeholder=" "
                 required
+                autoComplete="off"
                 onChange={handleChange}
               />
               <label htmlFor="floating_email">E-mail</label>
@@ -49,6 +50,7 @@ const Login = () => {
                 type="password"
                 placeholder=" "
                 required
+                autoComplete="off"
                 onChange={handleChange}
               />
               <label htmlFor="floating_password">Password</label>

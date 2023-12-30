@@ -37,6 +37,7 @@ const Register = () => {
                 type="text"
                 required
                 placeholder=" "
+                autoComplete="off"
                 onChange={handleChange}
               />
               <label htmlFor="floating_text">First Name</label>
@@ -48,6 +49,7 @@ const Register = () => {
                 type="text"
                 required
                 placeholder=" "
+                autoComplete="off"
                 onChange={handleChange}
               />
               <label htmlFor="floating_text">Last Name</label>
@@ -58,6 +60,7 @@ const Register = () => {
                 className="peer"
                 type="email"
                 placeholder=" "
+                autoComplete="off"
                 required
                 onChange={handleChange}
               />
@@ -69,6 +72,7 @@ const Register = () => {
                 className="peer"
                 type="password"
                 placeholder=" "
+                autoComplete="off"
                 required
                 onChange={handleChange}
               />
