@@ -8,6 +8,14 @@
 
 This project, created with React, includes a web application where you can register or log in with your own email or Google account. It is used to obtain information about movies and TV shows, and to view reviews
 
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Usage](#usage)
+- [Project Skeleton](#project-skeleton)
+- [Screenshots](#screenshots)
+
 ## Live Demo
 
 [Movie App](https://react-weather-app-omega-pink.vercel.app/)
